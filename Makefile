@@ -1,9 +1,9 @@
-#makefile for nines.c
-#testing for howmany99s
+#makefile for pNines.c
+#testing for howmany99s - using pthreads
 CC=gcc
 TARGET=nines
-SRC=nines.c
-OBJ=nines.o
+SRC=pNines.c
+OBJ=pNines.o
 FLAGS=-Wall -fopenmp -g -lpthread
 
 all: $(TARGET)
