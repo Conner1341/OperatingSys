@@ -6,7 +6,7 @@
         randomly generated array. It also records the execution time of the code.
          The number of threads the program runs on can be changed by changing
              the value of set_omp_threads() on line 33
- * status: working
+ * status: complete
  * compile with gcc -g -Wall -fopenmp ompNines.c -o nines
  * run with ./nines
  **************************************************************************/
