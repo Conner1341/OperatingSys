@@ -7,6 +7,7 @@ OBJ=pNines.o
 FLAGS=-Wall -fopenmp -g -lpthread
 
 all: $(TARGET)
+#	exe $(TARGET)
 
 $(TARGET): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(TARGET)

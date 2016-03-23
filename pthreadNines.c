@@ -15,17 +15,17 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NUM_THREADS 4
-#define LENGTH 200000000
+#define NUM_THREADS 2
+#define LENGTH 10000000
 
 int arr[LENGTH];
 int count;
 void *nines(void *param);   /* worker thread function */
-
+pthread_mutex_t lock;
 
 int main()
 {
-    int i, rval;
+    int i;
     double start_time, end_time;
 
     pthread_t workers[NUM_THREADS];
@@ -49,17 +49,18 @@ int main()
         pthread_create(&workers[i], &attr, nines, (void *)&threadId[i]);
     }
     for (i = 0; i < NUM_THREADS; i++){
-         rval += pthread_join(&workers[i], NULL);
+         pthread_join(&workers[i], NULL);
     }
     end_time = omp_get_wtime();
     printf("\n");
 
-    printf("The pthread code indicates that there are %d 99s in the array. \n\n", rval);
+    printf("The pthread code indicates that there are %d 99s in the array. \n\n", count);
     printf("The pthread used %f seconds to complete the execution.\n\n", end_time - start_time);
 
     /* clean up and exit */
     pthread_attr_destroy(&attr);
-    return 0;
+    pthread_mutex_destroy(&lock);
+    pthread_exit(NULL);
 }
 
 
@@ -72,7 +73,9 @@ void *nines(void *param) {
 
     for (i = begin; i < end; i++) {
         if (arr[i] == 99)
+            pthread_mutex_lock(&lock);
             count++;
+            pthread_mutex_unlock(&lock);
     }
-    pthread_exit(0);
+    pthread_exit(NULL);
 }
