@@ -2,12 +2,10 @@
  * name: Conner Herriges
  * course: CS 4328 - Operating Systems
  * project: Project1, part3b
- *      This program uses pthread to count the number of times '99' appears in a randomly generated array. It also records the execution time of the code.
+ *      This program uses pthread to count the number of times '99' appears in a randomly generated array.
          The number of threads the program runs on can be changed by changing
              the value of NUM_THREADS
  * status: working
- * compile with gcc -g -Wall -lpthread pNines.c -o nines
- * run with ./nines
  **************************************************************************/
 #include <omp.h>
 #include <stdio.h>
@@ -15,7 +13,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 
-#define NUM_THREADS 8
+#define NUM_THREADS 2
 #define LENGTH 200000000
 
 int arr[LENGTH];

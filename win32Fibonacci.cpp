@@ -4,7 +4,6 @@
 * project: Project1, part1b
 *      This program generates the Fibonacci sequence using Win32 threads
 * status: complete
-*	code was compiled with Visual Studio and run as "Start without Debugging"
 **************************************************************************/
 #include <stdlib.h>
 #include <stdio.h>

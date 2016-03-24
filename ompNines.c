@@ -3,12 +3,10 @@
  * course: CS 4328 - Operating Systems
  * project: Project1, part3a
  *      This program uses OpenMP to count the number of times '99' appears in a
-        randomly generated array. It also records the execution time of the code.
+        randomly generated array.
          The number of threads the program runs on can be changed by changing
              the value of set_omp_threads() on line 33
  * status: complete
- * compile with gcc -g -Wall -fopenmp ompNines.c -o nines
- * run with ./nines
  **************************************************************************/
 #include <omp.h>
 #include <stdio.h>
