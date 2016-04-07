@@ -1,13 +1,7 @@
-/***************************************************************************
- * name: Conner Herriges
- * course: CS 4328 - Operating Systems
- * project: Project1, part3a
- *      This program uses OpenMP to count the number of times '99' appears in a
-        randomly generated array.
-         The number of threads the program runs on can be changed by changing
-             the value of set_omp_threads() on line 33
- * status: complete
- **************************************************************************/
+/*********************************************************************
+ *  This is the serial code provided by the program specifications
+ ********************************************************************/
+
 #include <omp.h>
 #include <stdio.h>
 #include <time.h>
@@ -28,7 +22,7 @@ int main() {
     }
 
     start_time = omp_get_wtime();
-    omp_set_num_threads(2);
+    omp_set_num_threads(8);
     #pragma omp parallel shared(myArray, length) private(i)                     reduction(+:count)
         for (i = 0; i < length; i++) {
             if (myArray[i] == 99)

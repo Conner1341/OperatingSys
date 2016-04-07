@@ -4,7 +4,6 @@
  * project: Project1, part1a
  *      This program generates the Fibonacci sequence using Pthreads
  * status: complete
- * compile with gcc -g -Wall -lpthread fibonacci.c -o fibonacci
  **************************************************************************/
  #include<pthread.h>
  #include<stdio.h>

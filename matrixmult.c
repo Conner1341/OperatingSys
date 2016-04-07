@@ -2,9 +2,8 @@
  * name: Conner Herriges
  * course: CS 4328 - Operating Systems
  * project: Project1, part2a
- *    This program uses Pthreads to multiply two matrices, A and B, where matrix A contains M rows and K columns, and matrix B contains K rows and N columns. The product of A and B is another matrix, C.
+ *    This program uses Pthreads to multiply two matrices.
  * status: complete
- * compile with gcc -g -Wall -lpthread matrixmult.c -o matrix
  **************************************************************************/
 #include<pthread.h>
 #include<stdlib.h>
